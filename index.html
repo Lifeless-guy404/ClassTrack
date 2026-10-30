@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,58 +8,63 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  <div>
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="images/logo.png" alt="logo">
-        <h2>ClassTrack</h2>
-      </div>
-      <ul class="links">
-        <h4>Main Menu</h4>
-        <li>
-          <span class="material-symbols-outlined">dashboard</span>
-          <a href="#">Dashboard</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">show_chart</span>
-          <a href="#">Attendance</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">group</span>
-          <a href="#">Students</a>
-        </li>
-        <hr>
+    <!-- Single grid container wrapping both panels -->
+    <div class="app-layout">
       
-        <li>
-          <span class="material-symbols-outlined">event</span>
-          <a href="#">Sessions</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">bar_chart</span>
-          <a href="#">Reports and Analytics</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">devices</span>
-          <a href="#">RFID Devices</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">notifications</span>
-          <a href="#">Notifications</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">settings</span>
-          <a href="#">Settings</a>
-        </li>
-        <li class="logout-link">
-          <span class="material-symbols-outlined">logout</span>
-          <a href="#">Logout</a>
-        </li>
-      </ul>
-    </aside>
-  </div>
-  <div class="main-container" style="margin-left: 325px; margin-top: 50px;padding: 20px;">
-    <h4>Welcome</h4>
-    <h2>Dashboard</h2>
-  </div>
+      <!-- Fixed Sidebar Section -->
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo">
+          <h2>ClassTrack</h2>
+        </div>
+        <ul class="links">
+          <h4>Main Menu</h4>
+          <li>
+            <span class="material-symbols-outlined">dashboard</span>
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">show_chart</span>
+            <a href="#">Attendance</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">group</span>
+            <a href="#">Students</a>
+          </li>
+          <hr>
+          <li>
+            <span class="material-symbols-outlined">event</span>
+            <a href="#">Sessions</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">bar_chart</span>
+            <a href="#">Reports and Analytics</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">devices</span>
+            <a href="#">RFID Devices</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">notifications</span>
+            <a href="#">Notifications</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">settings</span>
+            <a href="#">Settings</a>
+          </li>
+          <li class="logout-link">
+            <span class="material-symbols-outlined">logout</span>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Container Section (Automatically handles spacing) -->
+      <main class="main-container">
+        <h4>Welcome!</h4>
+        <h2>Dashboard</h2>
+      </main>
+
+    </div>
   </body>
 </html>

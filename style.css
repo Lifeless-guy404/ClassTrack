@@ -106,14 +106,18 @@ body {
 
 .main-container {
     position: fixed;
-    width: 800px; /* Made wide permanently */
-    height: 80%;
+    top: 30px;
+    left: 290px;        /* Moves it right next to the sidebar (20px left + 260px width + 10px gap) */
+    right: 30px;        /* Keeps your strict 30px gap on the right side of the screen */
+    height: 90%;        /* Perfectly matches the height of your sidebar */
     display: flex;
     border-radius: 20px;
-    align-items: left;
+    align-items: flex-start;
     flex-direction: column;
+    padding: 30px;      /* Adds breathing room so your text isn't stuck to the top corner */
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(17px);
-    --webkit-backdrop-filter: blur(17px);
-    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
+
