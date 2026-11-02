@@ -1,70 +1,268 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClassTrack - Dashboard</title>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- Single grid container wrapping both panels -->
-    <div class="app-layout">
-      
-      <!-- Fixed Sidebar Section -->
-      <aside class="sidebar">
+</head>
+
+<body>
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
         <div class="logo">
-          <img src="images/logo.png" alt="logo">
-          <h2>ClassTrack</h2>
+            <img src="images/logo.png" alt="ClassTrack logo">
+            <h2>ClassTrack</h2>
         </div>
-        <ul class="links">
-          <h4>Main Menu</h4>
-          <li>
-            <span class="material-symbols-outlined">dashboard</span>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">show_chart</span>
-            <a href="#">Attendance</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">group</span>
-            <a href="#">Students</a>
-          </li>
-          <hr>
-          <li>
-            <span class="material-symbols-outlined">event</span>
-            <a href="#">Sessions</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">bar_chart</span>
-            <a href="#">Reports and Analytics</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">devices</span>
-            <a href="#">RFID Devices</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">notifications</span>
-            <a href="#">Notifications</a>
-          </li>
-          <li>
-            <span class="material-symbols-outlined">settings</span>
-            <a href="#">Settings</a>
-          </li>
-          <li class="logout-link">
-            <span class="material-symbols-outlined">logout</span>
-            <a href="#">Logout</a>
-          </li>
-        </ul>
-      </aside>
 
-      <!-- Main Container Section (Automatically handles spacing) -->
-      <main class="main-container">
-        <h4>Welcome!</h4>
-        <h2>Dashboard</h2>
-      </main>
+        <nav class="links">
+            <h4>Main Menu</h4>
 
-    </div>
-  </body>
+            <a href="#" class="nav-link active" data-page="dashboard">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="link-text">Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="attendance">
+                <span class="material-symbols-outlined">show_chart</span>
+                <span class="link-text">Attendance</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="students">
+                <span class="material-symbols-outlined">group</span>
+                <span class="link-text">Students</span>
+            </a>
+
+            <hr>
+
+            <a href="#" class="nav-link" data-page="sessions">
+                <span class="material-symbols-outlined">event</span>
+                <span class="link-text">Sessions</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="reports">
+                <span class="material-symbols-outlined">bar_chart</span>
+                <span class="link-text">Reports & Analytics</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="devices">
+                <span class="material-symbols-outlined">devices</span>
+                <span class="link-text">RFID Devices</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="notifications">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="link-text">Notifications</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="settings">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="link-text">Settings</span>
+            </a>
+
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-link logout-link" data-page="logout">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="link-text">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-container">
+
+        <header class="topbar">
+            <div class="page-heading">
+                <p id="welcomeText">Welcome back!</p>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+
+            <div class="topbar-right">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span id="systemStatus">System Online</span>
+                </div>
+
+                <div class="profile-icon">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD PAGE -->
+        <section class="page-content" id="dashboardPage">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Overview</h2>
+                    <p>Here's what's happening with your classroom today.</p>
+                </div>
+
+                <div class="date-display">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span id="currentDate">--</span>
+                </div>
+            </div>
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Students</span>
+                        <span class="material-symbols-outlined stat-icon blue">groups</span>
+                    </div>
+                    <h2 id="totalStudents">--</h2>
+                    <p>Registered students</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Present Today</span>
+                        <span class="material-symbols-outlined stat-icon green">how_to_reg</span>
+                    </div>
+                    <h2 id="presentToday">--</h2>
+                    <p>Marked present</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Absent Today</span>
+                        <span class="material-symbols-outlined stat-icon red">person_off</span>
+                    </div>
+                    <h2 id="absentToday">--</h2>
+                    <p>Calculated after session</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Attendance Rate</span>
+                        <span class="material-symbols-outlined stat-icon purple">analytics</span>
+                    </div>
+                    <h2 id="attendanceRate">--%</h2>
+                    <p>Today's attendance</p>
+                </article>
+
+            </div>
+
+            <!-- MIDDLE SECTION -->
+            <div class="dashboard-grid">
+
+                <article class="panel session-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Current Session</h3>
+                            <p>Attendance session overview</p>
+                        </div>
+                        <span class="session-badge" id="sessionBadge">--</span>
+                    </div>
+
+                    <div class="session-details">
+                        <div>
+                            <span class="detail-label">Session Name</span>
+                            <strong id="sessionName">--</strong>
+                        </div>
+
+                        <div>
+                            <span class="detail-label">Start Time</span>
+                            <strong id="sessionStart">--</strong>
+                        </div>
+
+                        <div>
+                            <span class="detail-label">Students Marked</span>
+                            <strong id="sessionMarked">--</strong>
+                        </div>
+                    </div>
+
+                    <div class="progress-info">
+                        <span>Attendance Progress</span>
+                        <strong id="sessionProgressText">--%</strong>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="sessionProgress"></div>
+                    </div>
+                </article>
+
+                <article class="panel device-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>RFID Reader</h3>
+                            <p>Hardware connection status</p>
+                        </div>
+                        <span class="material-symbols-outlined device-icon">sensors</span>
+                    </div>
+
+                    <div class="device-status">
+                        <span class="device-dot" id="deviceDot"></span>
+                        <strong id="deviceStatus">--</strong>
+                    </div>
+
+                    <p class="device-description" id="deviceDescription">
+                        Waiting for device information.
+                    </p>
+
+                    <div class="device-footer">
+                        <span>Last communication</span>
+                        <strong id="lastCommunication">--</strong>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- BOTTOM SECTION -->
+            <div class="dashboard-grid bottom-grid">
+
+                <article class="panel activity-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Recent Activity</h3>
+                            <p>Latest attendance records</p>
+                        </div>
+                        <a href="#" class="view-all" data-page="attendance">View all</a>
+                    </div>
+
+                    <div class="activity-list" id="recentActivity">
+                        <!-- Activity rows are generated by JavaScript -->
+                    </div>
+                </article>
+
+                <article class="panel chart-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Weekly Attendance</h3>
+                            <p>Attendance overview</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container" id="weeklyChart">
+                        <!-- Chart bars are generated by JavaScript -->
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PLACEHOLDER FOR OTHER PAGES -->
+        <section class="page-content empty-page" id="placeholderPage" hidden>
+            <div class="empty-page-content">
+                <span class="material-symbols-outlined" id="placeholderIcon">construction</span>
+                <h2 id="placeholderTitle">Coming Soon</h2>
+                <p>This section is currently under development.</p>
+                <span class="development-tag">UNDER DEVELOPMENT</span>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
